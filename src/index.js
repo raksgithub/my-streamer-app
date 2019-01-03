@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 
 // Components
 import App from './components/app';
@@ -11,9 +12,8 @@ import rootReducer from './reducers';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     rootReducer,
-    composeEnhancers(applyMiddleware())
+    composeEnhancers(applyMiddleware(thunk))
 );
-console.log(store.getState());
 ReactDOM.render(
     <Provider store={store}>
         <App />
