@@ -28,7 +28,7 @@ class StreamEdit extends React.Component {
                     {/* <p>{this.props.stream.title}</p> */}
                     <h3>Edit the Stream</h3>
                     <StreamForm onSubmit={this.onFormSubmit} initialValues={{ title, description }} operation='Update' /><br/>
-                    <button onClick={this.renderBack} className="ui primary button">Back</button>
+                    <button onClick={this.renderBack} className="ui primary button">&lt;&lt;{' '}Back</button>
                 </div>
             );
         }
